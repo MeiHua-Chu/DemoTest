@@ -14,5 +14,5 @@ jobs:
     - name: Xcode version
       run: /usr/bin/xcodebuild -version
     - name: Run tests
-      run: xcodebuild \ test \ -project DemoTest.xcodeproj \ -scheme DemoTestTests \ -destination 'platform=iOS Simulator,name=iPhone 13'
+      run: xcodebuild clean test -project "DemoTest.xcodeproj" -scheme "DemoTestTests" -destination "platform=iOS Simulator,name=iPhone 13,OS=latest"
 
