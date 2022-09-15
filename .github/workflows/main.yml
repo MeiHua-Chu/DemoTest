@@ -13,12 +13,10 @@ jobs:
       run: sudo xcode-select -switch /Applications/Xcode_13.0.app  
     - name: Xcode version
       run: /usr/bin/xcodebuild -version
-    - name: Run tests
+    - name: Run UnitTests
       run: xcodebuild clean test -project "DemoTest.xcodeproj" -scheme "DemoTestTests" -destination "platform=iOS Simulator,name=iPhone 13,OS=latest"
-    - name: Archive Xcode build log
+    - name: Upload Unit Test Logs
       uses: actions/upload-artifact@v2
       with:
-        name: build
-        path: |
-          /Users/runner/Library/Developer/Xcode/DerivedData/
-        retention-days: 28
+        name: build-logs
+        path: build/Logs
