@@ -16,10 +16,9 @@ jobs:
     - name: Run tests
       run: xcodebuild clean test -project "DemoTest.xcodeproj" -scheme "DemoTestTests" -destination "platform=iOS Simulator,name=iPhone 13,OS=latest"
     - name: Archive Xcode build log
-        if: ${{ always() }}
-        uses: actions/upload-artifact@v2
-        with:
-          name: build
-          path: |
-            /Users/runner/Library/Logs/scan
-          retention-days: 28
+      uses: actions/upload-artifact@v2
+      with:
+        name: build
+        path: |
+          /Users/runner/Library/Logs/scan
+        retention-days: 28
