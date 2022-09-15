@@ -16,7 +16,7 @@ jobs:
     - name: Run tests
       run: xcodebuild clean test -project "DemoTest.xcodeproj" -scheme "DemoTestTests" -destination "platform=iOS Simulator,name=iPhone 13,OS=latest"
     - name: Archive Xcode build log
-        if: always()
+        if: ${{ always() }}
         uses: actions/upload-artifact@v2
         with:
           name: build
