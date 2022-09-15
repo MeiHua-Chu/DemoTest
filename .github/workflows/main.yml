@@ -20,5 +20,5 @@ jobs:
       with:
         name: build
         path: |
-          /Users/runner/Library/Logs/scan
+          /Users/runner/Library/Developer/Xcode/DerivedData/
         retention-days: 28
